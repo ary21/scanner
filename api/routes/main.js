@@ -16,11 +16,11 @@ router.use((req, res, next) => {
 })
 
 router.get('/', (req, res) => {
-  res.render('login.html', { next: 'home' });
+  res.render('login.html', { next: 'agents' });
 });
 
 router.get('/home', (req, res) => {
-  res.render("main/master/agents.html");
+  res.redirect("/agents");
 });
 
 router.get('/products', (req, res) => {
