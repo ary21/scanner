@@ -20,28 +20,9 @@ router.get('/', (req, res) => {
 });
 
 router.get('/home', (req, res) => {
-  res.render("main/master/product.html");
+  res.render("main/master/agents.html");
 });
 
-router.get('/sales', (req, res) => {
-  res.render('main/trx/sales.html');
-});
-
-router.get('/sales-form', (req, res) => {
-  res.render('main/trx/sales-form.html');
-});
-
-router.get('/preorder', (req, res) => {
-  res.render('main/trx/preorder.html');
-});
-
-router.get('/inventory', (req, res) => {
-  res.render('main/trx/inventory.html');
-});
-
-/**
- * MASTER
- */
 router.get('/products', (req, res) => {
   ProductController.index(req, res)
 });

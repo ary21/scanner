@@ -14,7 +14,7 @@
         <i class="flaticon-right-arrow"></i>
       </li>
       <li class="nav-item">
-        <a href="#">Mitra</a>
+        <a href="#">kargo</a>
       </li>
     </ul>
   </div>
@@ -25,41 +25,92 @@
           <div class="card-header">
             <div class="card-head-row">
               <div class="card-title">
-                <h5>Daftar master semua mitra</h5>
+                <h5>Daftar master semua kargo</h5>
               </div>
               <div class="card-tools">
-                <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#formModal"><i class="fa fa-plus mr-2"></i>Tambah Mitra</button>
+                <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#formModal"><i class="fa fa-plus mr-2"></i>Tambah kargo</button>
               </div>
             </div>
           </div>
           <div class="card-body">
+
+            <div>
+              <a
+                class="btn btn-outline-danger btn-sm btn-status mt-2 mt-md-0"
+                href="#"
+              >
+                <span class="btn-label">
+                  <i class="fa fa-exclamation-circle text-danger"></i>
+                </span>
+                Scan dari Depo <b>(34)</b>
+              </a>
+              <a
+                class="btn btn-outline-warning btn-sm btn-status mt-2 mt-md-0"
+                href="#"
+              >
+                <span class="btn-label">
+                  <i class="fa fa-exclamation-circle text-warning"></i>
+                </span>
+                Sampai Gudang <b>(10)</b>
+              </a>
+              <a
+                class="btn btn-outline-info btn-sm btn-status mt-2 mt-md-0"
+                href="#"
+              >
+                <span class="btn-label">
+                  <i class="fa fa-info text-info"></i>
+                </span>
+                Proses Sortir <b>(5)</b>
+              </a>
+              <a
+                class="btn btn-outline-success btn-sm btn-status mt-2 mt-md-0"
+                href="#"
+              >
+                <span class="btn-label">
+                  <i class="fa fa-check text-success"></i>
+                </span>
+                Kirim ke Pelabuhan <b>(12)</b>
+              </a>
+              <a
+                class="btn btn-outline-primary btn-sm btn-status mt-2 mt-md-0"
+                href="#"
+              >
+                <span class="btn-label">
+                  <i class="fa fa-archive text-primary"></i>
+                </span>
+                Sudah Sampai <b>(25)</b>
+              </a>
+            </div>
             <div class="table-responsive">
               <table class="table table-bordered table-hover table-head-bg-primary mt-4">
                 <thead>
                   <tr>
-                    <th scope="col">Nama</th>
-                    <th scope="col">Stockist</th>
+                    <th scope="col">Kode</th>
+                    <th scope="col">Penerima</th>
                     <th scope="col">Info</th>
+                    <th>Status</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>
-                      <a href="#" class="text-link" data-toggle="modal" data-target="#formModal">Ani Susilo</a>
+                      <a href="#" class="text-link" data-toggle="modal" data-target="#formModal">A0091230</a>
                     </td>
-                    <td>Tono Subandi - Jakarta Pusat</td>
+                    <td>Toko Jaya</td>
                     <td>
-                      <span>0812344444</span><br>
-                      <span>joko@email.com</span>
+                      <span>Scan: Rudi</span><br>
+                      <span>Jumat, 12 Mei 2023 10:23</span>
                     </td>
+                    <td><span class="badge badge-warning badge-status">Sampai Gudang</span></td>
                   </tr>
                   <tr>
-                    <td><a href="#" class="text-link" data-toggle="modal" data-target="#formModal">Wati Subandi</a></td>
-                    <td>Budi Susilo - Bekasi</td>
+                    <td><a href="#" class="text-link" data-toggle="modal" data-target="#formModal">A0091244</a></td>
+                    <td>Batam Center</td>
                     <td>
-                      <span>0812344444</span><br>
-                      <span>susi@email.com</span>
+                      <span>Scan: Tono</span><br>
+                      <span>Jumat, 12 Mei 2023 11:23</span>
                     </td>
+                    <td><span class="badge badge-success badge-status">Sudah Sampai</span></td>
                   </tr>
                 </tbody>
               </table>
@@ -77,7 +128,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="formModalLabel">Form Mitra</h5>
+        <h5 class="modal-title" id="formModalLabel">Form kargo</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -85,24 +136,29 @@
       <div class="modal-body">
         <form>
           <div class="form-group">
-            <label for="stockist">Stockist</label>
+            <label for="stockist">Penerima</label>
             <select class="form-control" id="stockist" name="stockist">
-              <option>Pilih Stockist</option>
-              <option>Budi Susilo - Bekasi</option>
-              <option>Tono Subandi - Jakarta Pusat</option>
+              <option>Pilih Penerima</option>
+              <option>Toko Jaya</option>
+              <option>Batam Center</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="name">Nama Mitra</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Nama User" required>
+            <label for="name">Kode Kargo</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <button class="btn btn-sm btn-danger btn-border btnScan" onclick="openScan()" type="button"><b>KLIK SCAN</b></button>
+              </div>
+              <input type="text" class="form-control inputScan" placeholder="" aria-label="" aria-describedby="basic-addon1">
+            </div>
           </div>
           <div class="form-group">
-            <label for="phone">Telp</label>
-            <input type="text" class="form-control" id="phone" name="phone" placeholder="Telp" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
+            <label for="phone">Informasi tambahan</label>
+            <textarea
+                class="form-control"
+                id="field"
+                name="field"
+              ></textarea>
           </div>
         </form>
       </div>
@@ -113,4 +169,32 @@
     </div>
   </div>
 </div>
+
+
+<!-- Modal Scan -->
+<div class="modal fade" id="formModalScan" tabindex="-1" role="dialog" aria-labelledby="formModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-body">
+          <div id="qr-reader" style="height: 300px; border-radius: 4px; background: white;"></div>
+        </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block endscript %}
+<!-- include the library -->
+<script src="https://unpkg.com/html5-qrcode@2.0.9/dist/html5-qrcode.min.js"></script>
+<script>
+  function openScan () {
+    $('#formModalScan').modal('show');
+  }
+  function onScanSuccess(decodedText, decodedResult) {
+    console.log(`Code scanned = ${decodedText}`, decodedResult);
+    $('.inputScan').val(decodedText) 
+  }
+  var html5QrcodeScanner = new Html5QrcodeScanner("qr-reader", { fps: 10, qrbox: 250 });
+  html5QrcodeScanner.render(onScanSuccess);
+</script>
 {% endblock %}
