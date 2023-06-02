@@ -1,5 +1,5 @@
 # inventory
-Project distribution chicken from headquarters to stockist and manage stockist sales to agen (Mitra)
+Project scanner for logistic by web
 
 ## Stacks
 - Express
@@ -12,4 +12,4 @@ Project distribution chicken from headquarters to stockist and manage stockist s
 - use yarn dev
 
 ## Demo
-https://dfresto-dummy.vercel.app/
+[https://dfresto-dummy.vercel.app/](https://scanner-web-demo.vercel.app/)
