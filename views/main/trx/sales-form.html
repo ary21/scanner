@@ -1,0 +1,239 @@
+{% extends "../../template/layout-main.html" %}
+
+{% block content %}
+<div class="page-inner">
+  <div class="page-header">
+    <h4 class="page-title">Penjualan</h4>
+    <ul class="breadcrumbs">
+      <li class="nav-home">
+        <a href="#">
+          <i class="flaticon-home"></i>
+        </a>
+      </li>
+      <li class="separator">
+        <i class="flaticon-right-arrow"></i>
+      </li>
+      <li class="nav-item">
+        <a href="#">Form Penjualan</a>
+      </li>
+    </ul>
+  </div>
+  <div class="page-body">
+    <h5>Penjualan Baru dari kantor pusat kepada stockist</h5>
+
+    <div class="row">
+      <div class="col-md-6 col-sm-12 picker">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-head-row justify-content-between">
+              <div class="card-title">
+                <h5>Pilih Product Dahulu</h5>
+              </div>
+              <div class="card-tools">
+                <!-- <a href="#" class="">
+                  <i class="fas fa-shopping-cart"></i>
+                </a> -->
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="d-flex justify-content-between selectgroup selectgroup-pills">
+              <label class="selectgroup-item">
+                <input type="checkbox" name="value" value="1" class="selectgroup-input">
+                <div class="selectgroup-button">
+                  <p>Ayam Dada</p>
+                  <small>Rp5.000/kg</small><br />
+                  <small>Stok: <b>125</b></small>
+                </div>
+              </label>
+              <label class="selectgroup-item">
+                <input type="checkbox" name="value" value="2" class="selectgroup-input">
+                <div class="selectgroup-button">
+                  <p>Ayam Paha</p>
+                  <small>Rp5.000/pcs</small><br/>
+                  <small>Stok: <b>125</b></small>
+                </div>
+              </label>
+              <label class="selectgroup-item">
+                <input type="checkbox" name="value" value="3" class="selectgroup-input">
+                <div class="selectgroup-button">
+                  <p>Ayam Sayap</p>
+                  <small>Rp6.000/pcs</small><br/>
+                  <small>Stok: <b>125</b></small>
+                </div>
+              </label>
+              <label class="selectgroup-item">
+                <input type="checkbox" name="value" value="4" class="selectgroup-input">
+                <div class="selectgroup-button">
+                  <p>Tepung A</p>
+                  <small>Rp3.000/pcs</small><br/>
+                  <small>Stok: <b>125</b></small>
+                </div>
+              </label>
+              <label class="selectgroup-item">
+                <input type="checkbox" name="value" value="4" class="selectgroup-input">
+                <div class="selectgroup-button">
+                  <p>Tepung B</p>
+                  <small>Rp8.000/pcs</small><br/>
+                  <small>Stok: <b>125</b></small>
+                </div>
+              </label>
+              <label class="selectgroup-item">
+                <input type="checkbox" name="value" value="4" class="selectgroup-input">
+                <div class="selectgroup-button">
+                  <p>Tepung C</p>
+                  <small>Rp8.000/pcs</small><br/>
+                  <small>Stok: <b>125</b></small>
+                </div>
+              </label>
+              <label class="selectgroup-item">
+                <input type="checkbox" name="value" value="4" class="selectgroup-input">
+                <div class="selectgroup-button">
+                  <p>Tepung AA</p>
+                  <small>Rp3.000/pcs</small><br/>
+                  <small>Stok: <b>125</b></small>
+                </div>
+              </label>
+              <label class="selectgroup-item">
+                <input type="checkbox" name="value" value="4" class="selectgroup-input">
+                <div class="selectgroup-button">
+                  <p>Tepung BB</p>
+                  <small>Rp8.000/pcs</small><br/>
+                  <small>Stok: <b>125</b></small>
+                </div>
+              </label>
+              <label class="selectgroup-item">
+                <input type="checkbox" name="value" value="4" class="selectgroup-input">
+                <div class="selectgroup-button">
+                  <p>Tepung CC</p>
+                  <small>Rp8.000/pcs</small><br/>
+                  <small>Stok: <b>125</b></small>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="card-footer d-flex justify-content-between d-none d-sm-block d-md-none">
+            <a href="/sales" class="btn btn-sm btn-danger btn-border">Batalkan</a>
+            <button class="btn btn-sm btn-primary" onclick="nextMobile()">Selanjutnya <i class="fas fa-chevron-circle-right"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12 d-none d-md-block overview">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title"><h5>Informasi Order</h5></div>
+          </div>
+          <div class="card-body">
+            <select class="form-control" id="stockist" name="stockist">
+              <option>Pilih Stockist</option>
+              <option>Budi Susilo - Bekasi</option>
+              <option>Tono Subandi - Jakarta Pusat</option>
+            </select>
+  
+            <div class="card-list">
+              <div class="item-list">
+                <div class="info-user">
+                  <div class="username">Ayam Dada</div>
+                  <div class="status">Rp250.000</div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <button class="btn btn-sm btn-primary btn-border" type="button">
+                        <i class="fas fa-plus-circle"></i>
+                      </button>
+                    </div>
+                    <input value="50" type="number" min="0" class="form-control form-control-sm input-list" placeholder=""
+                      aria-label="" aria-describedby="basic-addon1">
+                    <div class="input-group-append">
+                      <button class="btn btn-sm btn-primary btn-border" type="button">
+                        <i class="fas fa-minus-circle"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item-list">
+                <div class="info-user">
+                  <div class="username">Ayam Paha</div>
+                  <div class="status">Rp512.000</div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <button class="btn btn-sm btn-primary btn-border" type="button">
+                        <i class="fas fa-plus-circle"></i>
+                      </button>
+                    </div>
+                    <input value="30" type="number" min="0" class="form-control form-control-sm input-list" placeholder=""
+                      aria-label="" aria-describedby="basic-addon1">
+                    <div class="input-group-append">
+                      <button class="btn btn-sm btn-primary btn-border" type="button">
+                        <i class="fas fa-minus-circle"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item-list">
+                <div class="info-user">
+                  <div class="username">Tepung A</div>
+                  <div class="status">Rp512.000</div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <button class="btn btn-sm btn-primary btn-border" type="button">
+                        <i class="fas fa-plus-circle"></i>
+                      </button>
+                    </div>
+                    <input value="30" type="number" min="0" class="form-control form-control-sm input-list" placeholder=""
+                      aria-label="" aria-describedby="basic-addon1">
+                    <div class="input-group-append">
+                      <button class="btn btn-sm btn-primary btn-border" type="button">
+                        <i class="fas fa-minus-circle"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <h5 class="last-justify">Jumlah Rp.1.223.500</h5>
+            <div class="d-flex justify-content-between mb-2">
+              <h5 class="last-justify">Potongan</h5>
+              <input type="number" value="0" class="form-control" style="width: 150px;">
+            </div>
+            <h5 class="last-justify">Total Rp.1.223.500</h5>
+            <div class="d-flex justify-content-between">
+              <h5 class="last-justify">Bayar</h5>
+              <input type="number" value="1223500" class="form-control" style="width: 150px;">
+            </div>
+          </div>
+          <div class="card-footer d-flex justify-content-between">
+            <button onclick="backMobile()" class="btn btn-sm btn-danger btn-border d-md-none">
+              <i class="fas fa-chevron-circle-left"></i> Kembali</button>
+            <a href="/sales" class="btn btn-sm btn-danger btn-border d-none d-md-block">Batalkan</a>
+            <a href="/sales" class="btn btn-sm btn-primary">Simpan</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block endscript %}
+<script>
+  function nextMobile () {
+    $('.overview').removeClass('d-none d-md-block').addClass('d-sm-block');
+    $('.picker').removeClass('d-sm-block').addClass('d-none d-md-block');
+  }
+  
+  function backMobile () {
+    $('.overview').removeClass('d-sm-block').addClass('d-none d-md-block');
+    $('.picker').removeClass('d-none d-md-block').addClass('d-sm-block');
+  }
+</script>
+{% endblock %}

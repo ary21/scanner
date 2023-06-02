@@ -1,0 +1,105 @@
+{% extends "../../template/layout-stockist.html" %}
+
+{% block content %}
+<div class="page-inner">
+  <div class="page-header">
+    <h4 class="page-title">Master Data</h4>
+    <ul class="breadcrumbs">
+      <li class="nav-home">
+        <a href="#">
+          <i class="flaticon-home"></i>
+        </a>
+      </li>
+      <li class="separator">
+        <i class="flaticon-right-arrow"></i>
+      </li>
+      <li class="nav-item">
+        <a href="#">Mitra</a>
+      </li>
+    </ul>
+  </div>
+  <div class="page-content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-head-row">
+              <div class="card-title">
+                <h5>Daftar master semua mitra</h5>
+              </div>
+              <div class="card-tools">
+                <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#formModal"><i
+                    class="fa fa-plus mr-2"></i>Tambah Mitra</button>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover table-head-bg-primary mt-4">
+                <thead>
+                  <tr>
+                    <th scope="col">Nama</th>
+                    <th scope="col">Info</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <a href="#" class="text-link" data-toggle="modal" data-target="#formModal">Ani Susilo</a>
+                    </td>
+                    <td>
+                      <span>0812344444</span><br>
+                      <span>joko@email.com</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><a href="#" class="text-link" data-toggle="modal" data-target="#formModal">Wati Subandi</a></td>
+                    <td>
+                      <span>0812344444</span><br>
+                      <span>susi@email.com</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="formModalLabel">Form Mitra</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="name">Nama Mitra</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Nama User" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Telp</label>
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="Telp" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-danger btn-border" data-dismiss="modal">Batalkan</button>
+        <button type="button" class="btn btn-sm btn-primary">Simpan</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

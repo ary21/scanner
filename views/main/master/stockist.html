@@ -1,0 +1,120 @@
+{% extends "../../template/layout-main.html" %}
+
+{% block content %}
+<div class="page-inner">
+  <div class="page-header">
+    <h4 class="page-title">Master Data</h4>
+    <ul class="breadcrumbs">
+      <li class="nav-home">
+        <a href="#">
+          <i class="flaticon-home"></i>
+        </a>
+      </li>
+      <li class="separator">
+        <i class="flaticon-right-arrow"></i>
+      </li>
+      <li class="nav-item">
+        <a href="#">Stockist</a>
+      </li>
+    </ul>
+  </div>
+  <div class="page-content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-head-row">
+              <div class="card-title">
+                <h5>Daftar master semua stockist</h5>
+              </div>
+              <div class="card-tools">
+                <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#formModal"><i class="fa fa-plus mr-2"></i>Tambah Stockist</button>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover table-head-bg-primary mt-4">
+                <thead>
+                  <tr>
+                    <th scope="col">Nama</th>
+                    <th scope="col">Kota</th>
+                    <th scope="col">Info</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <a href="#" class="text-link" data-toggle="modal" data-target="#formModal">Tono Susilo</a>
+                    </td>
+                    <td>Bekasi Barat</td>
+                    <td>
+                      <span>0812344444</span><br>
+                      <span>tono@email.com</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><a href="#" class="text-link" data-toggle="modal" data-target="#formModal">Budi Subandi</a></td>
+                    <td>Jakarta Timur</td>
+                    <td>
+                      <span>0812344444</span><br>
+                      <span>budi@email.com</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="formModalLabel">Form Stockist</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="role">Kota</label>
+            <select class="form-control" id="role" name="role">
+              <option>Pilih Kota</option>
+              <option>Jakarta Pusat</option>
+              <option>Bekasi</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="name">Nama Stockist</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Nama User" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Telp</label>
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="Telp" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="text" class="form-control" id="password" name="password" placeholder="Password" required>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-danger btn-border" data-dismiss="modal">Batalkan</button>
+        <button type="button" class="btn btn-sm btn-primary">Simpan</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
